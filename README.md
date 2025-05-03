@@ -1,3 +1,2 @@
 # 3DPAN-CIL
-The code is about to be released
-
+The complete code will be released soon.
