@@ -1,2 +1,2 @@
 # 3DPAN-CIL
-The complete code will be released soon.
+We currently provide the main source code, and the complete code will be released soon.
