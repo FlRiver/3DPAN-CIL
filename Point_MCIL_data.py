@@ -332,14 +332,14 @@ class PointcloudScaleAndTranslate(object):
 
 if __name__ == '__main__':
 
-    Incremental = IncrementalDataSplitter("/home/xyj/data/modelnet", "modelnet10", 'avg', 5)
-    # Incremental = IncrementalDataSplitter("/home/xyj/data/ShapeNet55-34", "shapenet55", "avg", 11)
+    Incremental = IncrementalDataSplitter("~/data/modelnet", "modelnet10", 'avg', 5)
+    # Incremental = IncrementalDataSplitter("~/data/ShapeNet55-34", "shapenet55", "avg", 11)
     class_splites, class_cls = Incremental.split_class()
     print(class_cls)
     print(class_splites)
    
-    dataloader_train = ModelNetDataLoader("/home/xyj/data/modelnet", class_splites[0], class_cls, split="train")
-    # dataloader_train = ShapeNetDataLoader("/home/xyj/data/ShapeNet55-34", class_splites[0], class_cls, split="train")
+    dataloader_train = ModelNetDataLoader("~/data/modelnet", class_splites[0], class_cls, split="train")
+    # dataloader_train = ShapeNetDataLoader("~/data/ShapeNet55-34", class_splites[0], class_cls, split="train")
 
     datas_train = torch.utils.data.DataLoader(dataloader_train, batch_size=200)
     for data, label in datas_train:
