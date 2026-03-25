@@ -88,7 +88,7 @@ def main():
 
  
     if args.dataset == "modelnet40" or args.dataset == "modelnet10":
-        args.dataset_path = "/home/xyj/data/modelnet"
+        args.dataset_path = "~/data/modelnet"
         Incremental = IncrementalDataSplitter(args.dataset_path, args.dataset, args.split_way, args.tasks)
         class_splites, class_cls = Incremental.split_class()
  
@@ -104,9 +104,9 @@ def main():
             TrainDataLoaders.append(torch.utils.data.DataLoader(dataloader_train, batch_size=args.batch_size, shuffle=True, num_workers=args.workers))
             TestDataLoaders.append(torch.utils.data.DataLoader(dataloader_test, batch_size=args.batch_size, num_workers=args.workers))
     elif args.dataset == "shapenet55":
-        args.dataset_path = "/home/xyj/data/ShapeNet55-34"
+        args.dataset_path = "~/data/ShapeNet55-34"
     elif args.dataset == "fewshot":
-        args.dataset_path = "/home/xyj/data/ModelNetFewshot"
+        args.dataset_path = "~/data/ModelNetFewshot"
     else:
         raise FileNotFoundError(f"The dataset at '{args.dataset}' does not exist.")
 
